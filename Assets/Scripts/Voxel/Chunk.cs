@@ -25,7 +25,10 @@ public class Chunk : MonoBehaviour
         for (int x = 0; x < CHUNK_SIZE; x++)
             for (int y = 0; y < CHUNK_SIZE; y++)
                 for (int z = 0; z < CHUNK_SIZE; z++) { 
-                    blockData[x, y, z] = Random.Range(0, 5);
+                    if (Random.Range(0, 2) != 0)
+                        blockData[x, y, z] = Random.Range(0, 5);
+                    else
+                        blockData[x, y, z] = 0;
                 }
     }
 
@@ -76,8 +79,8 @@ public class Chunk : MonoBehaviour
                         for (int i = 0; i < 4; i++) vertices.Add(new Vector3(x, y, z) + VertPos[Faces[f, i]] / 2f);
                         triangles.AddRange(new int[]
                             {
-                                v, v + 2, v + 1,
-                                v, v + 3, v + 2
+                                v, v + 1, v + 2,
+                                v, v + 2, v + 3
                             });
 
                         Block block = Block.BlockFromID(blockData[x, y, z]);

@@ -8,9 +8,9 @@ public class Block
     public Vector2 uvCoordinate { get; private set; }
 
     public static Block drygrass = new Block(1, 0, 0);
-    public static Block dirt = new Block(2, 0, 1);
-    public static Block greywacke = new Block(3, 0, 2);
-    public static Block limestone = new Block(4, 0, 3);
+    public static Block dirt = new Block(2, 1, 0);
+    public static Block greywacke = new Block(3, 2, 0);
+    public static Block limestone = new Block(4, 3, 0);
 
     public Block (int identifier, int uvCoordX, int uvCoordY)
     {
